@@ -2,7 +2,6 @@ from .base import *
 
 import json
 
-DEBUG = True
 ALLOWED_HOSTS = '*'
 
 ENV_CONFIG_FILE = os.path.join(BASE_DIR, 'settings/env_production.json')

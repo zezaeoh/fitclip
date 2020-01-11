@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from .authentication.router import router as auth_router
 
 urlpatterns = [
-    path('', include(auth_router.urls)),
     path('admin/', admin.site.urls),
+
+    # path to djoser end points
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+
+    # path to our accounts's app endpoints
+    path("api/accounts/", include("fitclib.accounts.urls"))
 ]

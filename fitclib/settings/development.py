@@ -9,7 +9,6 @@ ENV_CONFIG_FILE = os.path.join(BASE_DIR, 'settings/env_development.json')
 ENV_CONFIG = json.loads(open(ENV_CONFIG_FILE).read())
 print('loading: env_development.json')
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
