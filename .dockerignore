@@ -4,5 +4,6 @@ docker-compose*
 .git
 .idea
 .gitignore
+static
 README.md
 LICENSE
