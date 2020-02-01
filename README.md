@@ -1,2 +1,2 @@
-# fitclib
-fitclib service backend server
+# fitclip
+fitclip service backend server

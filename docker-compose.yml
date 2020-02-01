@@ -5,10 +5,10 @@ services:
     build:
       context: .
       target: dev
-    image: jaegeon/fitclib:dev
-    container_name: fitclib-dev
+    image: jaegeon/fitclip:dev
+    container_name: fitclip-dev
     environment:
-      FITCLIB_ENV: development
+      FITCLIP_ENV: development
     volumes:
       - .:/app
     ports:

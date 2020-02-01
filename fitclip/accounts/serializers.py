@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from fitclib.accounts.models import UserProfile
+from fitclip.accounts.models import UserProfile
 
 
 class UserProfileSerializer(serializers.ModelSerializer):

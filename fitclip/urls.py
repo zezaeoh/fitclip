@@ -1,4 +1,4 @@
-"""fitclib URL Configuration
+"""fitclip URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -25,5 +25,5 @@ urlpatterns = [
     path('auth/', include('djoser.urls.jwt')),
 
     # path to our accounts's app endpoints
-    path("api/accounts/", include("fitclib.accounts.urls"))
+    path("api/accounts/", include("fitclip.accounts.urls"))
 ]
