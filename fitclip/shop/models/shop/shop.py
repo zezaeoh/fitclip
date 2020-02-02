@@ -1,3 +1,4 @@
+from django.contrib.staticfiles.storage import staticfiles_storage
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -7,6 +8,16 @@ class Shop(models.Model):
         max_length=50,
         verbose_name=_("쇼핑몰 이름"),
         help_text=_("쇼핑몰의 이름입니다.")
+    )
+    url = models.URLField(
+        null=True,
+        verbose_name=_("쇼핑몰 url"),
+        help_text=_("쇼핑몰의 링크입니다.")
+    )
+    logo_img = models.ImageField(
+        default=staticfiles_storage.url("shop/default.png"),
+        verbose_name=_("쇼핑몰 로고 이미지"),
+        help_text=_("쇼핑몰의 대표 이미지입니다.")
     )
 
     def __str__(self):

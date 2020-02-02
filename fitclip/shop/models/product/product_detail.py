@@ -1,6 +1,5 @@
 from typing import List
 
-from django.conf import settings
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -55,7 +54,6 @@ class ProductDetail(models.Model):
         verbose_name=_("이미지 05"),
         help_text=_("제품의 디테일 페이지에 표시될 이미지입니다.")
     )
-
     _meta_data = models.TextField(
         blank=True,
         null=True,
@@ -66,6 +64,12 @@ class ProductDetail(models.Model):
     @property
     def size(self) -> List[str]:
         pass
+
+    def __str__(self):
+        return f"{self.product.name} 상세 정보"
+
+    def __repr__(self):
+        return self.__str__()
 
     class Meta:
         verbose_name = _('제품 상세 정보')
