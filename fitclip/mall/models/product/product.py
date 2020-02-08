@@ -2,8 +2,8 @@ from django.db import models
 from django.db.models.fields.files import ImageFieldFile
 from django.utils.translation import ugettext_lazy as _
 
-from fitclip.shop.models.category import Category, Section
-from fitclip.shop.models.shop import Shop
+from fitclip.mall.models.category import Category, Section
+from fitclip.mall.models.shop import Shop
 
 
 class Product(models.Model):

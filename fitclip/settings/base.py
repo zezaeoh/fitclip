@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'fitclip.accounts',
-    'fitclip.shop',
+    'fitclip.mall',
 
     'rest_framework',
     'rest_framework_simplejwt',

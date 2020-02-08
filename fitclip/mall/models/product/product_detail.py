@@ -1,10 +1,27 @@
+from __future__ import annotations
+
+import os
+import uuid
 from typing import List
 
-from django.contrib.staticfiles.storage import staticfiles_storage
 from django.db import models
+from django.utils.deconstruct import deconstructible
 from django.utils.translation import ugettext_lazy as _
 
-from fitclip.shop.models.product import Product
+from fitclip.mall.models.product import Product
+
+
+@deconstructible
+class PathAndRename:
+    def __init__(self, sub_path):
+        self.path = sub_path
+
+    def __call__(self, instance: ProductDetail, filename: str):
+        ext = filename.split('.')[-1]  # eg: 'jpg'
+        uid = uuid.uuid4().hex[:10]  # eg: '567ae32f97'
+
+        renamed_filename = f'{instance.product.id}/{uid}.{ext}'
+        return os.path.join(self.path, renamed_filename)
 
 
 class ProductDetail(models.Model):
@@ -20,37 +37,43 @@ class ProductDetail(models.Model):
         help_text=_("제품의 디테일 페이지에 표시될 상세 설명입니다.")
     )
     thumbnail = models.ImageField(
-        default=staticfiles_storage.url("product/default.png"),
+        default="/image/product/default.png",
+        upload_to=PathAndRename('/image/product/'),
         verbose_name=_("대표 이미지"),
         help_text=_("제품의 대표 이미지입니다.")
     )
     img_1 = models.ImageField(
         null=True,
         blank=True,
+        upload_to=PathAndRename('/image/product/'),
         verbose_name=_("이미지 01"),
         help_text=_("제품의 디테일 페이지에 표시될 이미지입니다.")
     )
     img_2 = models.ImageField(
         null=True,
         blank=True,
+        upload_to=PathAndRename('/image/product/'),
         verbose_name=_("이미지 02"),
         help_text=_("제품의 디테일 페이지에 표시될 이미지입니다.")
     )
     img_3 = models.ImageField(
         null=True,
         blank=True,
+        upload_to=PathAndRename('/image/product/'),
         verbose_name=_("이미지 03"),
         help_text=_("제품의 디테일 페이지에 표시될 이미지입니다.")
     )
     img_4 = models.ImageField(
         null=True,
         blank=True,
+        upload_to=PathAndRename('/image/product/'),
         verbose_name=_("이미지 04"),
         help_text=_("제품의 디테일 페이지에 표시될 이미지입니다.")
     )
     img_5 = models.ImageField(
         null=True,
         blank=True,
+        upload_to=PathAndRename('/image/product/'),
         verbose_name=_("이미지 05"),
         help_text=_("제품의 디테일 페이지에 표시될 이미지입니다.")
     )

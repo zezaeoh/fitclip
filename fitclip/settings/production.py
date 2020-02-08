@@ -8,6 +8,13 @@ ENV_CONFIG_FILE = os.path.join(BASE_DIR, 'settings/env_production.json')
 ENV_CONFIG = json.loads(open(ENV_CONFIG_FILE).read())
 print('loading: env_production.json')
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_ACCESS_KEY_ID = ENV_CONFIG['aws']['access_key_id']
+AWS_SECRET_ACCESS_KEY = ENV_CONFIG['aws']['secret_access_key_id']
+AWS_STORAGE_BUCKET_NAME = ENV_CONFIG['aws']['storage_bucket_name']
+AWS_S3_REGION_NAME = ENV_CONFIG['aws']['s3_region_name']
+AWS_QUERYSTRING_AUTH = False
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

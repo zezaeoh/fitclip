@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from fitclip.shop.models.category import Category
+from fitclip.mall.models.category import Category
 
 
 class Section(models.Model):

@@ -25,5 +25,6 @@ urlpatterns = [
     path('auth/', include('djoser.urls.jwt')),
 
     # path to our accounts's app endpoints
-    path("api/accounts/", include("fitclip.accounts.urls"))
+    path("api/accounts/", include("fitclip.accounts.urls")),
+    path("api/mall/", include("fitclip.mall.urls"))
 ]
