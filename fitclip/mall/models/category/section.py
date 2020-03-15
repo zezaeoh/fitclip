@@ -15,6 +15,11 @@ class Section(models.Model):
         on_delete=models.CASCADE,
         verbose_name=_("카테고리")
     )
+    icon_img = models.ImageField(
+        default="/image/section/default.png",
+        verbose_name=_("상세 분류 이미지"),
+        help_text=_("상세 분류를 표현할 간단한 이미지입니다.")
+    )
 
     def __str__(self):
         return self.name
