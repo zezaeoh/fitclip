@@ -19,7 +19,6 @@ class SectionInline(admin.StackedInline):
 
 class SubInline(admin.StackedInline):
     model = Sub
-    filter_horizontal = ('fit_specs',)
     extra = 1
 
 

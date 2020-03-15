@@ -9,7 +9,7 @@ from fitclip.mall.serializers.product import ProductSerializer, ProductDetailSer
 
 class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    A simple ViewSet for viewing and editing accounts.
+    A simple ViewSet for viewing products.
     """
     queryset = Product.objects.all()
     serializer_class = ProductSerializer

@@ -21,6 +21,10 @@ class Section(models.Model):
         help_text=_("상세 분류를 표현할 간단한 이미지입니다.")
     )
 
+    @property
+    def subs(self):
+        return self.sub_set
+
     def __str__(self):
         return self.name
 
