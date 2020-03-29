@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from fitclip.fit.models.fit_spec import FitSpecOption
+from fitclip.fit.serializers import FitSpecOptionSerializer
 from fitclip.mall.models.category import Category, Section, Sub
 
 
@@ -28,6 +30,12 @@ class SectionSerializer(serializers.ModelSerializer):
 
 
 class SubSerializer(serializers.ModelSerializer):
+    fit_specs = serializers.SerializerMethodField()
+
     class Meta:
         model = Sub
         fields = '__all__'
+
+    def get_fit_specs(self, obj):
+        qset = FitSpecOption.objects.filter(sub=obj)
+        return [FitSpecOptionSerializer(m).data for m in qset]
