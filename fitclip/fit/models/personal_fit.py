@@ -19,6 +19,12 @@ class PersonalFit(models.Model):
         help_text=_("치수 데이터를 입력받을 데이터 타입입니다.")
     )
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.__str__()
+
     class Meta:
         verbose_name = _('개인화 치수 데이터')
         verbose_name_plural = _('개인화 치수 데이터')
