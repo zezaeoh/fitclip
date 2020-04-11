@@ -26,5 +26,6 @@ urlpatterns = [
 
     # path to our accounts's app endpoints
     path("api/accounts/", include("fitclip.accounts.urls")),
-    path("api/mall/", include("fitclip.mall.urls"))
+    path("api/mall/", include("fitclip.mall.urls")),
+    path("api/fit/", include("fitclip.fit.urls"))
 ]

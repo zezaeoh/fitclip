@@ -17,7 +17,7 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SectionViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    A simple ViewSet for viewing categories.
+    A simple ViewSet for viewing sections.
     """
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
@@ -27,7 +27,7 @@ class SectionViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SubViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    A simple ViewSet for viewing categories.
+    A simple ViewSet for viewing subs.
     """
     queryset = Sub.objects.all()
     serializer_class = SubSerializer
