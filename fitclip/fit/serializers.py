@@ -36,5 +36,5 @@ class PersonalFitUIOptionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PersonalFitUIOption
-        fields = ['personal_fit', 'button_group', 'personal_fit_ui_type']
+        fields = ['personal_fit', 'group', 'desc', 'personal_fit_ui_type']
 

@@ -42,11 +42,16 @@ class PersonalFitUIOption(models.Model):
         verbose_name=_("개인화 치수 UI 타입"),
         help_text=_("개인화 치수 데이터를 표현 할 UI 타입입니다.")
     )
-    button_group = models.CharField(
+    group = models.CharField(
         max_length=20,
+        verbose_name=_("그룹"),
+        help_text=_("그룹으로 묶을 이름입니다."),
+    )
+    desc = models.CharField(
+        max_length=60,
         null=True,
-        verbose_name=_("버튼 그룹"),
-        help_text=_("버튼을 하나의 그룹으로 묶을 이름입니다."),
+        verbose_name=_("그룹 설명"),
+        help_text=_("그룹을 설명합니다."),
     )
     personal_fit = models.ForeignKey(
         PersonalFit,
