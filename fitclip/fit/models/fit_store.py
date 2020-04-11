@@ -37,4 +37,4 @@ class FitStore(models.Model):
 
     class Meta:
         verbose_name = _('입력 받은 치수 데이터')
-        verbose_name_plural = _('입력 받은 치수 데이터들')
+        verbose_name_plural = _('입력 받은 치수 데이터')

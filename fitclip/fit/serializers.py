@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from fitclip.fit.models.fit_spec import FitSpecOption, FitSpec
+from fitclip.fit.models.personal_fit import PersonalFitUIOption, PersonalFit
 from fitclip.fit.models.fit_store import FitStore
 
 
@@ -22,3 +23,18 @@ class FitStoreSerializer(serializers.ModelSerializer):
     class Meta:
         model = FitStore
         fields = '__all__'
+
+
+class PersonalFitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PersonalFit
+        fields = '__all__'
+
+
+class PersonalFitUIOptionSerializer(serializers.ModelSerializer):
+    personal_fit = PersonalFitSerializer(read_only=True)
+
+    class Meta:
+        model = PersonalFitUIOption
+        fields = ['personal_fit', 'button_group', 'personal_fit_ui_type']
+

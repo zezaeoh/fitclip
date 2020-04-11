@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models.product import Product, ProductDetail
 from .models.shop import Shop
 from .models.category import Category, Section, Sub
-from ..fit.admin import FitSpecOptionInline
+from ..fit.admin import FitSpecOptionInline, PersonalFitUIOptionInline
 
 
 class ProductDetailInline(admin.StackedInline):
@@ -46,5 +46,5 @@ class SectionAdmin(admin.ModelAdmin):
 @admin.register(Sub)
 class SubAdmin(admin.ModelAdmin):
     list_display = ('name', 'section', 'category')
-    inlines = [FitSpecOptionInline]
+    inlines = [FitSpecOptionInline, PersonalFitUIOptionInline]
 
