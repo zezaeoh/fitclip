@@ -4,7 +4,7 @@ botocore==1.15.21
 Django==3.0.4
 django-storages==1.9.1
 django-templated-mail==1.1.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 djangorestframework-simplejwt==4.4.0
 djoser==2.0.3
 docutils==0.16
